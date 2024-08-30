@@ -1,0 +1,44 @@
+<details class="border border-secondary rounded p-2 m-2" {% if jekyll.environment == "development" %}open{% endif %}>
+  {% if include.correct %}
+    <summary>Solution</summary>
+  {% else %}
+    <summary>Wrong answer</summary>
+  {% endif %}
+
+  {% if include.answer.type == "text" %}
+    {% if include.correct %}
+      <strong>Correct:</strong> {{ include.answer.text }}
+    {% else %}
+      <strong>Wrong:</strong> {{ include.answer.text }}
+    {% endif %}
+
+  {% elsif include.answer.type == "figure" %}
+    {% assign figure = include.answer.figure %}
+    {% assign img_src = figure.img_src | relative_url %}
+    {% include figure.html
+      src=img_src
+      img_class=figure.img_class
+      caption=figure.caption %}
+
+  {% elsif include.answer.type == "figures" %}
+    {% if include.correct %}
+      <strong>Correct:</strong> {{ include.answer.text }}
+    {% else %}
+      <strong>Wrong:</strong> {{ include.answer.text }}
+    {% endif %}
+
+    <div class="row {{ include.answer.row_class }}">
+      {% for figure in include.answer.figures %}
+        <div class="col">
+          {% assign img_src = figure.img_src | relative_url %}
+          {% include figure.html
+            src=img_src
+            img_class=figure.img_class
+            caption=figure.caption %}
+        </div>
+      {% endfor %}
+    </div>
+
+  {% endif %}
+
+</details>

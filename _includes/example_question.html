@@ -1,0 +1,8 @@
+{% if include.question.type == "figure" %}
+  {% assign figure = include.question.figure %}
+  {% assign img_src = figure.img_src | relative_url %}
+  {% include figure.html
+    src=img_src
+    img_class=figure.img_class
+    caption=figure.caption %}
+{% endif %}

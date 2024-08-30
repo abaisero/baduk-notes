@@ -1,0 +1,25 @@
+{% assign example = site.data.examples[include.name] %}
+
+<details id="{{ include.name }}" class="border border-secondary rounded p-2 m-2" {% if jekyll.environment == "development" %}open{% endif %}>
+  <summary>{{ example.title }}</summary>
+
+  {% if example.type == "figure" %}
+    {% assign figure = example.figure %}
+    {% assign img_src = figure.img_src | relative_url %}
+    {% include figure.html
+      src=img_src
+      img_class=figure.img_class
+      caption=figure.caption %}
+
+  {% elsif example.type == "qna" %}
+    {% include example_question.html question=example.question %}
+    {% for answer in example.answers %}
+      {% include example_answer.html answer=answer correct=answer.correct %}
+    {% endfor %}
+    {% if example.answer %}
+      {% include example_answer.html answer=example.answer correct=true %}
+    {% endif %}
+
+  {% endif %}
+
+</details>

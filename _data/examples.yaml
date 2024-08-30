@@ -1,0 +1,135 @@
+approaching-move-1:
+  title: "Example: Approaching Move 1"
+  type: qna
+  question: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.approaching-moves.1.question.svg
+      img_class: w-50 mx-auto
+      caption: How many primary and secondary liberties does black have?
+  answer: 
+    type: text
+    text: White has 8 primary liberties and secondary liberties.
+
+approaching-move-2:
+  title: "Example: Approaching Move 2"
+  type: qna
+  question: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.approaching-moves.2.question.svg
+      img_class: w-50 mx-auto
+      caption: How many primary and secondary liberties does black have?
+  answer: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.approaching-moves.2.answer.svg
+      img_class: w-50 mx-auto
+      caption: White has 8 primary liberties, but 9 secondary liberties. White must play an additional approaching move to capture.
+
+approaching-move-3:
+  title: "Example: Approaching Move 3"
+  type: qna
+  question: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.approaching-moves.3.question.svg
+      img_class: w-50 mx-auto
+      caption: How many primary and secondary liberties does black have?
+  answer: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.approaching-moves.3.answer.svg
+      img_class: w-50 mx-auto
+      caption: White has 8 primary liberties and 8 secondary liberties. White may avoid the approach move by saving the corresponding intersection for last.
+
+bamboo-joint:
+  title: "Example: Bamboo Joint"
+  type: qna
+  question:
+    type: figure
+    figure: 
+      img_src: /assets/svgs/liberties.forcing-moves.bamboo.question.svg
+      img_class: w-25 mx-auto
+      caption: How many liberties does black have?
+  answers:
+    - type: figures
+      correct: false
+      text: 7 liberties
+      row_class: row-cols-3
+      figures: 
+        - img_src: /assets/svgs/liberties.forcing-moves.bamboo.wrong.1.svg
+          caption: White removes some liberties, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.bamboo.wrong.2.svg
+          caption: ... ataris, which is a forcing move, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.bamboo.wrong.3.svg
+          caption: ... and finishes the capture in 7 moves.
+    - type: figures
+      correct: true
+      text: 6 liberties
+      row_class: row-cols-3
+      figures: 
+        - img_src: /assets/svgs/liberties.forcing-moves.bamboo.correct.1.svg
+          caption: White removes some liberties, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.bamboo.correct.2.svg
+          caption: ... ataris, which is a <em>free</em> forcing move, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.bamboo.correct.3.svg
+          caption: ... and finishes the capture in 6 <em>net</em> moves.
+
+throw-in:
+  title: "Example: Throw-in"
+  type: qna
+  question: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.forcing-moves.throw-in.question.svg
+      img_class: w-50 mx-auto
+      caption: How many liberties does black have?
+  answers: 
+    - type: figures
+      correct: false
+      text: 8 liberties
+      row_class: row-cols-3
+      figures:
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.wrong.1.svg
+          caption: White removes some liberties, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.wrong.2.svg
+          caption: ... ataris, which is a free forcing move, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.wrong.3.svg
+          caption: ... and finishes the capture in 8 <em>net</em> moves.
+    - type: figures
+      correct: true
+      text: 7 liberties
+      row_class: row-cols-2
+      figures:
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.correct.1.svg
+          caption: White removes some liberties, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.correct.2.svg
+          caption: ... throws in, which is a free forcing move, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.correct.3.svg
+          caption: ... ataris, which is a free forcing move, ...
+        - img_src: /assets/svgs/liberties.forcing-moves.throw-in.correct.4.svg
+          caption: ... and finishes the capture in 7 <em>net</em> moves.
+
+non-empty-eye:
+  title: "Example: Non-Empty Big Eye"
+  type: qna
+  question: 
+    type: figure
+    figure:
+      img_src: /assets/svgs/liberties.big-eyes.svg
+      img_class: w-25 mx-auto
+      caption: How many liberties does black's eye have?
+  answers: 
+    - type: text
+      correct: false
+      text: There are $5$ empty intersections. Black has $5$ liberties.
+    - type: text
+      correct: false
+      text: There are $5$ empty intersections. Black has $\liberties(5) = 8$ liberties.
+    - type: text
+      correct: false
+      text: The eye size is $n=7$. Black has $\liberties(7) = 17$ liberties.
+    - type: text
+      correct: true
+      text: The eye size is $n=7$, but $2$ liberties are already taken. Black has $\liberties(7) - 2 = 17 - 2 = 15$ liberties.
